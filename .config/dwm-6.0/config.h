@@ -47,7 +47,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "xterm", NULL };
+static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *lockcmd[]  = { "lock.sh", NULL };
 
 static Key keys[] = {
