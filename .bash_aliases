@@ -71,7 +71,7 @@ alias vi=vim
 alias h='history | tail -n 30'
 alias gcc='gcc -Wall -pedantic'
 alias ffb=git-checkout-file-from-branch
-alias nt='xterm & disown'
+alias nt='$TERM & disown'
 
 alias g=git
 alias gs='git status'
