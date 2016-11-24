@@ -11,7 +11,7 @@ find-and-remove() {
 
 find-in-source() {
     find . -regextype posix-extended -regex '.*\.(scala|java)' \
-      -exec grep -n $1 {} +
+      -exec grep -n "$@" {} +
 }
 
 find-and-exec() {
