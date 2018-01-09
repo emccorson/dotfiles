@@ -15,11 +15,11 @@ set formatoptions+=t
 " set linebreak
 " set nolist
 
-set tabstop=4
+set tabstop=2
 set expandtab
 syntax on
-set background=light
-colorscheme molokai
+" set background=light
+" colorscheme molokai
 
 " inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
