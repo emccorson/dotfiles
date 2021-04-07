@@ -1,3 +1,16 @@
+vue-development-edit() {
+    COMPONENT="Dialog"
+    EXAMPLE="Dialogs"
+    vim -O "$HOME/src/OnsenUI/bindings/vue/vue-onsenui/src/components/VOns""$COMPONENT"".vue" "$HOME/src/OnsenUI/bindings/vue/vue-onsenui-examples/src/components/""$EXAMPLE"".vue"
+}
+
+vue-development() {
+    urxvt --hold -e bash -c "cd ~/src/OnsenUI/bindings/vue && npm run eric" &
+    urxvt --hold -e bash -c "cd ~/src/OnsenUI/bindings/vue && npm run serve" &
+    cd ~/src/OnsenUI/bindings/vue &&
+    vue-development-edit
+}
+
 find-and-grep() {
     find . -name $1 -exec grep $2 {} +
 }
@@ -60,8 +73,10 @@ git-jump-back() {
     fi
 }
 
+alias ba='vim ~/.bash_aliases && source ~/.bash_aliases'
 alias no='vim ~/things'
 alias dev='dev.sh & disown & exit'
+alias e='vim'
 alias fis=find-in-source
 alias fig=find-and-grep
 alias fr=find-and-remove
@@ -71,7 +86,10 @@ alias vi=vim
 alias h='history | tail -n 30'
 alias gcc='gcc -Wall -pedantic'
 alias ffb=git-checkout-file-from-branch
-alias nt='$TERM & disown'
+alias nt='urxvt & disown'
+alias npmiw='npm install --package-lock-only --no-package-lock'
+alias v=vue-development
+alias ve=vue-development-edit
 
 alias g=git
 alias gs='git status'
@@ -87,3 +105,11 @@ alias gbc=git-branch-and-checkout
 alias gj=git-jump
 alias gjb=git-jump-back
 
+alias cdv='cd ~/src/OnsenUI/bindings/vue'
+
+
+__git_complete g _git
+__git_complete ga _git_add
+__git_complete gl _git_log
+__git_complete gc _git_commit
+__git_complete gd _git_diff
